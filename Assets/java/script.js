@@ -1,5 +1,5 @@
 var timeDisplayEl = $("#currentDay");
-const saveBtn = document.getElementById("saveBtn");
+var saveBtn = document.getElementById("saveBtn");
 let textInfoNine = document.getElementById("nine-am");
 let textInfoTen = document.getElementById("ten-am");
 let textInfoEleven = document.getElementById("eleven-am");
@@ -10,12 +10,13 @@ let textInfoThree = document.getElementById("three-pm");
 let textInfoFour = document.getElementById("four-pm");
 let textInfoFive = document.getElementById("five-pm");
 
-
+// Hero clock functionality
 function displayTime() {
     var rightNow = moment().format("MMM DD, YYYY [at] hh:mm:ss a");
     timeDisplayEl.text(rightNow)
 }
 
+// Time block functionalities for dynamic bgcolor changes
 function nineAm() {
     var currentTime = moment().format("HH");
     var nineAmBg = document.getElementById("nine-am");
@@ -125,6 +126,7 @@ function fivePm() {
     }
 }
 
+// Saves items placed in time blocks for future use
 function saveFnc() {
     console.log('saveFnc fired!');
     localStorage.setItem("textInfoNine", textInfoNine.value);
@@ -139,6 +141,7 @@ function saveFnc() {
 
 }
 
+// populates time block fields from local storage
 function getSaves() {
     textInfoNine.textContent = localStorage.getItem("textInfoNine", textInfoNine.value);
     textInfoTen.textContent = localStorage.getItem("textInfoTen", textInfoTen.value);
@@ -167,4 +170,5 @@ twoPm();
 threePm();
 fourPm();
 fivePm();
+// populate fields if content exists in local storage
 getSaves();
