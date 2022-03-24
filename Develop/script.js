@@ -136,18 +136,19 @@ function saveFnc() {
     localStorage.setItem("textInfoThree", textInfoThree.value)
     localStorage.setItem("textInfoFour", textInfoFour.value)
     localStorage.setItem("textInfoFive", textInfoFive.value)
+
 }
 
 function getSaves() {
-    localStorage.getItem("textInfoNine", textInfoNine.value);
-    localStorage.getItem("textInfoTen", textInfoTen.value);
-    localStorage.getItem("textInfoEleven", textInfoEleven.value);
-    localStorage.getItem("textInfoTwelve", textInfoTwelve.value);
-    localStorage.getItem("textInfoOne", textInfoOne.value);
-    localStorage.getItem("textInfoTwo", textInfoTwo.value);
-    localStorage.getItem("textInfoThree", textInfoThree.value);
-    localStorage.getItem("textInfoFour", textInfoFour.value);
-    localStorage.getItem("textInfoFive", textInfoFive.value);
+    textInfoNine.textContent = localStorage.getItem("textInfoNine", textInfoNine.value);
+    textInfoTen.textContent = localStorage.getItem("textInfoTen", textInfoTen.value);
+    textInfoEleven.textContent = localStorage.getItem("textInfoEleven", textInfoEleven.value);
+    textInfoTwelve.textContent = localStorage.getItem("textInfoTwelve", textInfoTwelve.value);
+    textInfoOne.textContent = localStorage.getItem("textInfoOne", textInfoOne.value);
+    textInfoTwo.textContent = localStorage.getItem("textInfoTwo", textInfoTwo.value);
+    textInfoThree.textContent = localStorage.getItem("textInfoThree", textInfoThree.value);
+    textInfoFour.textContent = localStorage.getItem("textInfoFour", textInfoFour.value);
+    textInfoFive.textContent = localStorage.getItem("textInfoFive", textInfoFive.value);
 }
 
 saveBtn.addEventListener("click", saveFnc);
